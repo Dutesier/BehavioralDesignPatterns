@@ -1,4 +1,5 @@
 # Chain of Responsibility
+## Goal
 Increase reusability for a series of nested handlers
 
 ## Represent sequential checks as a chain of handlers
@@ -8,12 +9,17 @@ class HandlerInterface
 HandlerInterface    :   handler
 HandlerInterface    :   setNext(handler)
 HandlerInterface    :   handle()
+
 class WetRoadHandler
-WetRoadInterface    :   handler
-WetRoadInterface    :   setNext(handler)
-WetRoadInterface    :   handle()
+WetRoadHandler    :   handler
+WetRoadHandler    :   setNext(handler)
+WetRoadHandler    :   handle()
+
 class PotholeHandler
-PotholeInterface    :   handler
-PotholeInterface    :   setNext(handler)
-PotholeInterface    :   handle()
+PotholeHandler    :   handler
+PotholeHandler    :   setNext(handler)
+PotholeHandler    :   handle()
+
+HandlerInterface    <|-- WetRoadHandler
+HandlerInterface    <|-- PotholeHandler
 ```
